@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  SERVER_IP: ${{ secrets.SERVER_IP }}
+  SERVER_USER: ${{ secrets.SERVER_USER }}
+=======
+>>>>>>> 2052c3b (Added GitHub Actions deployment)
 name: Deploy to Server
 
 on:
@@ -29,3 +38,7 @@ jobs:
           docker-compose up -d --build
           EOF
 
+<<<<<<< HEAD
+=======
+>>>>>>> b4373de (Added GitHub Actions deployment)
+>>>>>>> 2052c3b (Added GitHub Actions deployment)
