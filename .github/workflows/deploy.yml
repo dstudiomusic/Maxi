@@ -1,18 +1,14 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 env:
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
   SERVER_IP: ${{ secrets.SERVER_IP }}
   SERVER_USER: ${{ secrets.SERVER_USER }}
-=======
->>>>>>> 2052c3b (Added GitHub Actions deployment)
+
 name: Deploy to Server
 
 on:
   push:
     branches:
-      - main  # Указываем ветку, при пуше в которую будет деплой
+      - main
 
 jobs:
   deploy:
@@ -20,11 +16,11 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Setup SSH Key
         run: |
-          mkdir -p ~/.ssh
+          mkdir -p ~/.ssh/
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
@@ -32,13 +28,16 @@ jobs:
       - name: Deploy to Server
         run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-          cd /root/telegram-bot
-          git pull origin main
-          docker-compose down
-          docker-compose up -d --build
+            cd /root/telegram-bot
+            git pull origin main
+            docker-compose down
+            docker-compose up -d --build
           EOF
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> b4373de (Added GitHub Actions deployment)
 >>>>>>> 2052c3b (Added GitHub Actions deployment)
+=======
+>>>>>>> 5787c51 (Added GitHub Actions workflow)
