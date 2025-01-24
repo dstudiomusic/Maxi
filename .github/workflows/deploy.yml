@@ -33,11 +33,3 @@ jobs:
       docker-compose down
       docker-compose up -d --build
     EOF
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b4373de (Added GitHub Actions deployment)
->>>>>>> 2052c3b (Added GitHub Actions deployment)
-=======
->>>>>>> 5787c51 (Added GitHub Actions workflow)
