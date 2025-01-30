@@ -1,0 +1,24 @@
+[0;1;32m●[0m ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (]8;;file://ubuntu-4gb-fsn1-1/usr/lib/systemd/system/ssh.service/usr/lib/systemd/system/ssh.service]8;;; [0;1;38;5;185mdisabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Sat 2025-01-25 13:37:53 UTC; 2min 21s ago
+TriggeredBy: [0;1;32m●[0m ssh.socket
+       Docs: ]8;;man:sshd(8)man:sshd(8)]8;;
+             ]8;;man:sshd_config(5)man:sshd_config(5)]8;;
+    Process: 1100 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 1102 (sshd)
+      Tasks: 1 (limit: 4542)
+     Memory: 4.3M (peak: 22.3M)
+        CPU: 553ms
+     CGroup: /system.slice/ssh.service
+             └─[0;38;5;245m1102 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"[0m
+
+Jan 25 13:39:21 ubuntu-4gb-fsn1-1 sshd[1244]: Connection closed by 101.126.35.211 port 43444 [preauth]
+Jan 25 13:39:42 ubuntu-4gb-fsn1-1 sshd[1246]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.92.0.155  user=root[0m
+Jan 25 13:39:45 ubuntu-4gb-fsn1-1 sshd[1246]: Failed password for root from 218.92.0.155 port 38924 ssh2
+Jan 25 13:39:49 ubuntu-4gb-fsn1-1 sshd[1246]: Failed password for root from 218.92.0.155 port 38924 ssh2
+Jan 25 13:39:52 ubuntu-4gb-fsn1-1 sshd[1242]: Accepted password for root from 138.201.175.120 port 48672 ssh2
+Jan 25 13:39:52 ubuntu-4gb-fsn1-1 sshd[1242]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+Jan 25 13:39:52 ubuntu-4gb-fsn1-1 sshd[1246]: Failed password for root from 218.92.0.155 port 38924 ssh2
+Jan 25 13:39:55 ubuntu-4gb-fsn1-1 sshd[1246]: Received disconnect from 218.92.0.155 port 38924:11:  [preauth]
+Jan 25 13:39:55 ubuntu-4gb-fsn1-1 sshd[1246]: Disconnected from authenticating user root 218.92.0.155 port 38924 [preauth]
+Jan 25 13:39:55 ubuntu-4gb-fsn1-1 sshd[1246]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.92.0.155  user=root[0m
